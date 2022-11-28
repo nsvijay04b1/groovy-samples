@@ -23,6 +23,6 @@ srclist.each {
   println it.path
 }
 println("dest files")
-destdir.each {
+destlist.each {
   println it.path
 }
