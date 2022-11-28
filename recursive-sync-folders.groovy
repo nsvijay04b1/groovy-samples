@@ -12,10 +12,10 @@ def destlist = []
 
 def srcdir = new File("${src}")
 def destdir = new File("${dest}")
-dir.eachFileRecurse (FileType.FILES) { file ->
+srcdir.eachFileRecurse (FileType.FILES) { file ->
   srclist << file
 }
-dir.eachFileRecurse (FileType.FILES) { file ->
+destdir.eachFileRecurse (FileType.FILES) { file ->
   destlist << file
 }
 println("source files")
