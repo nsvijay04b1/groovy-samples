@@ -9,8 +9,8 @@ def dest =  args[1]
 def srclist = []
 def destlist = []
 
-def srcdir = new File("${WORKSPACE}/${src}")
-def destdir = new File("${WORKSPACE}/${dest}")
+def srcdir = new File("${env.WORKSPACE}/${src}")
+def destdir = new File("${env.WORKSPACE}/${dest}")
 dir.eachFileRecurse (FileType.FILES) { file ->
   srclist << file
 }
