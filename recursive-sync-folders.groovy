@@ -1,8 +1,11 @@
 import groovy.io.FileType
+import groovy.transform.Field
 
-src = ${SOURCE}
-dest = ${TARGET}
-  
+@Field String[] args = binding.getVariable('args') as String[]
+
+def src = args[0]
+def dest =  args[1]
+
 def list = []
 
 def dir = new File("/Users/vijayakumar/.jenkins/workspace/sample-groovy")
