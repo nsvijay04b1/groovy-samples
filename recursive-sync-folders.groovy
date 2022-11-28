@@ -6,13 +6,22 @@ import groovy.transform.Field
 def src = args[0]
 def dest =  args[1]
 
-def list = []
+def srclist = []
+def destlist = []
 
-def dir = new File("/Users/vijayakumar/.jenkins/workspace/sample-groovy")
+def srcdir = new File("${WORKSPACE}/${src}")
+def destdir = new File("${WORKSPACE}/${dest}")
 dir.eachFileRecurse (FileType.FILES) { file ->
-  list << file
+  srclist << file
 }
-
-list.each {
+dir.eachFileRecurse (FileType.FILES) { file ->
+  destlist << file
+}
+println("source files")
+srclist.each {
+  println it.path
+}
+println("dest files")
+destdir.each {
   println it.path
 }
